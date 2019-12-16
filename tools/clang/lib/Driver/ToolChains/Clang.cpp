@@ -3760,7 +3760,7 @@ void Clang::ConstructJob(Compilation &C, const JobAction &JA,
 
   // Discard value names in assert builds unless otherwise specified.
   if (Args.hasFlag(options::OPT_fdiscard_value_names,
-                   options::OPT_fno_discard_value_names, !IsAssertBuild))
+                   options::OPT_fno_discard_value_names, IsAssertBuild))
     CmdArgs.push_back("-discard-value-names");
 
   // Set the main file name, so that debug info works even with
